@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-// import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Palette from "./Palette";
 import PaletteList from "./PaletteList";
 import SingleColorPalette from "./SingleColorPalette";
@@ -46,8 +46,8 @@ class App extends Component {
     return (
       <Route
         render={({ location }) => (
-          // <TransitionGroup>
-          //   <CSSTransition key={location.key} classNames='page' timeout={500}>
+          <TransitionGroup>
+            <CSSTransition key={location.key} classNames='page' timeout={500}>
               <Switch location={location}>
                 <Route
                   exact
@@ -114,8 +114,8 @@ class App extends Component {
                   )}
                 />
               </Switch>
-          //   </CSSTransition>
-          // </TransitionGroup>
+            </CSSTransition>
+          </TransitionGroup>
         )}
       />
     );
